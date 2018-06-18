@@ -112,4 +112,24 @@ function openedCards(){
         		count = [];
           },350);
          }
-       } 
+       }
+
+//With this we are starting the game and shuffuling the cards
+function startGame() {
+    cardArray = shuffle(cardArray);
+    restartDeck();
+    clearInterval(interval);
+    hours = 0;
+    minutes = 0;
+    seconds =0;
+    timer.innerHTML = minutes +"mins " + seconds + "secs";
+    count = [];
+    moves = 0;
+    counter.innerHTML = moves;
+    rating = 3;
+    for (var i= 0; i < stars.length; i++){
+      stars[i].style.visibility = "visible";
+    }
+  }
+
+document.body.onload = startGame();       
