@@ -98,9 +98,9 @@ function creatDeck(){
 //This function is handling th e match or un match cards
 function openedCards(){
         if(count[0].innerHTML === count[1].innerHTML){
-          count[0].classList.add("match", "blocked");
+          count[0].classList.add("match");
           count[0].classList.remove("show", "open");
-          count[1].classList.add("match", "blocked");
+          count[1].classList.add("match");
           count[1].classList.remove("show", "open");
           count = [];
          }else {
