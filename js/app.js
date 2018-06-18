@@ -187,6 +187,7 @@ function moveCounter(){
 //The modal window when we win the game
 function finGame(){
   if(matchCards.length == 16){
+    clearInterval(interval);
     modal.style.display = "block";
     let lastMove = counter.innerHTML;
     let finalTime = timer.innerHTML;
