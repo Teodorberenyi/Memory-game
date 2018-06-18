@@ -67,3 +67,49 @@ let minutes = 0;
 let seconds =0;
 let rating = 3;
 let interval;
+
+//This is creating the whole deck
+function creatDeck(){
+   cardArray.forEach(item => {
+   const list = document.createElement('li');
+   list.setAttribute('class', 'card');
+   deck.appendChild(list);
+   list.addEventListener('click', function(event){
+	   let flip = event.target;
+     moveCounter();
+     count.push(flip);
+     let openCards = count.length;
+     //we need this to not flip more cards then 2 at the time
+     if (openCards <2){
+	   flip.classList.add('show', 'open', 'blocked');
+   }
+     if (openCards === 2){
+	   openedCards();
+     finGame();
+   }
+
+   });
+   const card = document.createElement('i');
+   card.setAttribute('class', item.cardClass)
+   list.appendChild(card);
+});
+}
+
+//This function is handling th e match or un match cards
+function openedCards(){
+        if(count[0].innerHTML === count[1].innerHTML){
+          count[0].classList.add("match", "blocked");
+          count[0].classList.remove("show", "open");
+          count[1].classList.add("match", "blocked");
+          count[1].classList.remove("show", "open");
+          count = [];
+         }else {
+           count[0].classList.add("unmatched");
+           count[1].classList.add("unmatched");
+            setTimeout(function(){
+        		count[0].classList.remove('show', 'open', "unmatched", "blocked");
+            count[1].classList.remove('show', 'open', "unmatched", "blocked");
+        		count = [];
+          },350);
+         }
+       } 
