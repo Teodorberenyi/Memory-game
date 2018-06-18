@@ -132,4 +132,75 @@ function startGame() {
     }
   }
 
-document.body.onload = startGame();       
+document.body.onload = startGame();
+
+//This is basicly destroying the old deck, and with this we are restarting the game
+function restartDeck(){
+  $(document).ready(function(){
+    $("button").click(function(){
+      $("#deck").empty();
+    });
+        creatDeck();
+  });
+}
+
+//This is counting the time
+function startTime() {
+  interval = setInterval(function() {
+    seconds++;
+    if (seconds == 60) {
+      minutes++;
+      seconds = 0;
+    }
+    if (minutes == 60){
+      hours++;
+      minutes = 0;
+    }
+    timer.innerHTML = minutes +"mins " + seconds + "secs";
+  },1000);
+}
+
+//Counting the moves and the rating in the game
+function moveCounter(){
+  moves++;
+  counter.innerHTML = moves;
+  if (moves == 1){
+    startTime();
+  }
+  if (moves > 16 && moves < 24){
+    rating =2;
+        for( i= 0; i < 3; i++){
+            if(i > 1){
+        stars[i].style.visibility = "hidden";
+      }
+    }
+  } if (moves > 32){
+    rating = 1;
+    for( i= 0; i < 3; i++){
+            if(i > 0){
+              stars[i].style.visibility = "hidden";
+   }
+   }
+  }
+}
+
+//The modal window when we win the game
+function finGame(){
+  if(matchCards.length == 16){
+    modal.style.display = "block";
+    let lastMove = counter.innerHTML;
+    let finalTime = timer.innerHTML;
+    popup.innerHTML ='You finsihed the game in '+finalTime+' with '+lastMove+' moves and a '+rating+' star raiting good job!';
+  }
+}
+
+//The play again button
+function playAgin(){
+  startGame();
+  modal.style.display = "none";
+}
+
+//To close the modal
+span.onclick = function(){
+  modal.style.display = "none";
+}
