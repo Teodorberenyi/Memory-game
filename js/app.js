@@ -1,7 +1,40 @@
 /*
- * Create a list that holds all of your cards
+ * it holding all my cards
  */
-
+ let cardArray = [
+  {'name' : 'diamond',
+   'cardClass' : 'fa fa-diamond'},
+  {'name' : 'anchor',
+   'cardClass' : 'fa fa-anchor'},
+  {'name' : 'bolt',
+   'cardClass' : 'fa fa-bolt'},
+  {'name' : 'cube',
+   'cardClass' : 'fa fa-cube'},
+  {'name' : 'leaf',
+   'cardClass' : 'fa fa-leaf'},
+  {'name' : 'bicycle',
+   'cardClass' : 'fa fa-bicycle'},
+  {'name' : 'bomb',
+   'cardClass' : 'fa fa-bomb'},
+  {'name' : 'plane',
+   'cardClass' : 'fa fa-paper-plane-o'},
+   {'name' : 'diamond',
+    'cardClass' : 'fa fa-diamond'},
+   {'name' : 'anchor',
+    'cardClass' : 'fa fa-anchor'},
+   {'name' : 'bolt',
+    'cardClass' : 'fa fa-bolt'},
+   {'name' : 'cube',
+    'cardClass' : 'fa fa-cube'},
+   {'name' : 'leaf',
+    'cardClass' : 'fa fa-leaf'},
+   {'name' : 'bicycle',
+    'cardClass' : 'fa fa-bicycle'},
+   {'name' : 'bomb',
+    'cardClass' : 'fa fa-bomb'},
+   {'name' : 'plane',
+    'cardClass' : 'fa fa-paper-plane-o'}
+ ];
 
 /*
  * Display the cards on the page
